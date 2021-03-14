@@ -220,6 +220,14 @@ public class NeuralBot implements Bot {
         bias_h.add(h_gradient);
 
     }
+    public void fit(double[][]X,double[][]Y,int epochs)
+    {
+        for(int i=0;i<epochs;i++)
+        {
+            int sampleN =  (int)(Math.random() * X.length );
+            this.train(X[sampleN], Y[sampleN]);
+        }
+    }
     @Override
     public Direction chooseDirection(Snake snake, Snake opponent, Coordinate mazeSize, Coordinate apple) {
 
